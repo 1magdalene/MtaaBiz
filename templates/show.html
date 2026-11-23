@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Show Contacts Page</title>
 </head>
 <body>
-    
+    <h1>All Contacts</h1>
+    <p>Below is a list of all contacts stored in the database:</p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through all contacts and display their information -->
+            {% for contact in all %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.subject }}</td>
+                <td>{{ contact.message }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
 </body>
 </html>
